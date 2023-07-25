@@ -1,10 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import UserRoute from "./routes/UserRoute.js";
+import Inventory from "./routes/InventoryRoute.js";
 
 const app = express();
-mongoose.connect("mongodb://127.0.0.1:27017/fullstack_db", {
+mongoose.connect("mongodb://127.0.0.1:27017/inventory_db", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -16,8 +16,8 @@ db.once("open", () => console.log("Database Connected..."));
 // app.use(cors({ origin: "http://127.0.0.1:5000/", credentials: true }));
 app.use(
   cors({
-    // origin: "http://127.0.0.1:5000/", 
-    origin: "*", 
+    // origin: "http://127.0.0.1:5000/",
+    origin: "*",
     // credentials: true,
     // withCredentials: false,
     // optionSuccessStatus: 200,
@@ -25,6 +25,6 @@ app.use(
 );
 
 app.use(express.json());
-app.use(UserRoute);
+app.use(Inventory);
 
 app.listen(5000, () => console.log("Server up and running..."));
