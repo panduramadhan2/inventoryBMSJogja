@@ -1,0 +1,25 @@
+GET http://127.0.0.1:5000/users
+
+###
+GET http://127.0.0.1:5000/users/64bf2bbfd103d9896dd3b4e3
+
+###
+POST http://127.0.0.1:5000/users
+Content-Type: application/json
+
+{
+    "name" : "Dheaaa",
+    "email": "dhea@gmail.com",
+    "gender": "Female"
+}
+###
+PATCH  http://127.0.0.1:5000/users/64bf2bbfd103d9896dd3b4e3
+Content-Type: application/json
+
+{
+    "name" : "Jhon",
+    "email": "jhon@gmail.com",
+    "gender": "Male"
+}
+###
+DELETE   http://127.0.0.1:5000/users/64bf2bbfd103d9896dd3b4e3
